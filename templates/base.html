@@ -49,7 +49,38 @@
 
 <script src="{% static 'dist/js/demo.js' %}"></script>
 <!--<script src="dist/js/pages/dashboard3.js'"></script>
+
 -->
+
+<script>
+$("#catinput").hide()
+$("#addcat").click(function(){
+  $("#catinput").show()
+});
+$("#backcat").click(function(){
+  $("#catinput").hide()
+});
+
+
+
+
+{% for book in books %}
+
+$(".cat{{book.category.id}}").click(function(){
+  $(".bookhide").hide()
+  $(".book{{book.category.id}}").show()
+});
+
+{% endfor %}
+
+
+
+
+
+
+
+</script>
+
 <script>
   $(document).ready(function(){
     $('#myModal').on('shown.bs.modal', function () {
