@@ -42,20 +42,20 @@
               <!-- /.card -->
             </div>
             <!-- /.col-md-6 -->
-          {% comment %}
-                          {% for book in books %}
+          
+            {% for book in books %}
               {% if book.price != None %}
-                {% if book.status == 'sold' %}
+              {% if book.status == 'sold' %}
                   <p class="totalprice">{{book.price}}</p>
-                {% endif %}
+              {% endif %}
               {% endif %}
               {% if total_render != None %}
-                {% if book.status == 'rented' %}
-                <p class="totalprice">{{book.total_render}}</p>
+              {% if book.status == 'rented' %}
+                <p class="totalprice" >{{book.total_render}}</p>
                 {% endif %}
               {% endif %}
             {% endfor %}
-          {% endcomment %}
+          
 
             
             <div class="col-lg-6">
@@ -68,7 +68,7 @@
                 <div class="card-body">
                   <div class="d-flex">
                     <p class="d-flex flex-column">
-                      <span id="totalsalarys" class="text-bold text-lg">$250</span><br></p>
+                      <span id="totalsalarys" class="text-bold text-lg">$</span><br></p>
                   </div>
                   <!-- /.d-flex -->
   

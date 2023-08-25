@@ -53,6 +53,36 @@
 -->
 
 <script>
+
+
+$(document).ready(function(){
+  var total = 0;
+
+  $('.totalprice').each(function(){
+    $(this).hide()
+    var salary = $(this).text()
+    total += paeseInt(salary)
+  });
+  $("#totalsalarys").text(total)
+
+
+
+
+});
+
+
+
+
+
+
+$("retal_price_day").keyup(function(){
+  $("total_render").val($("retal_period").val()*$("retal_price_day").val())
+})
+
+
+
+
+
 $("#catinput").hide()
 $("#addcat").click(function(){
   $("#catinput").show()
@@ -199,7 +229,7 @@ $(function () {
     type: 'pie',
     data: {
       datasets: [{
-        data: ['35','25','40'],
+        data: ['{{bookavailable}}','{{booksold}}','{{bookrented}}'],
         backgroundColor :["#27c100","#f3545d","#fdaf4b"],
         borderWidth: 10,
         
